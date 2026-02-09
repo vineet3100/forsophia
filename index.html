@@ -71,4 +71,153 @@
             border-radius: 20px;
             object-fit: cover;
             border: 4px solid white;
-            box-shadow: 0 10px 2
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transform: rotate(-3deg);
+        }
+
+        /* Buttons */
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #e64980; /* Hot pink button */
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(230, 73, 128, 0.3);
+        }
+
+        button:hover {
+            transform: scale(1.02);
+            background-color: #d6336c;
+        }
+
+        button.secondary {
+            background-color: #fff0f6;
+            color: #d6336c;
+            border: 2px solid #fcc2d7;
+        }
+
+        button.secondary:hover {
+            background-color: #fcc2d7;
+            color: white;
+        }
+
+        /* Slide Control */
+        .slide {
+            display: none;
+            width: 100%;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Decor Bear */
+        .bear-decor {
+            position: absolute;
+            top: -25px;
+            right: -15px;
+            font-size: 3rem;
+            transform: rotate(15deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-heart" style="top: 10%; left: 10%;">❤️</div>
+    <div class="bg-heart" style="top: 20%; right: 15%; animation-delay: 1s;">💖</div>
+    <div class="bg-heart" style="bottom: 15%; left: 20%; animation-delay: 2s;">💕</div>
+    <div class="bg-heart" style="bottom: 10%; right: 10%; animation-delay: 3s;">💗</div>
+
+    <div class="card">
+        <div class="bear-decor">🧸</div>
+
+        <div id="slide1" class="slide active">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3R4cW15eXJ6aGZ5eWZ5eXJ6aGZ5eWZ5eXJ6aGZ5eWZ5eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26BRv0ThflsHCqDrG/giphy.gif" class="intro-photo" alt="Us">
+            
+            <h1>Hey Soph</h1>
+            <p>Since i cant make it back next weekend i wanted to let you know i do care abt you and that if anyone else sends you flowers ill turn into dexter! 🔪🩸</p>
+            <p style="font-size: 0.9rem; color: #888;">I made the questions easy since you’re slow</p>
+            
+            <div class="btn-container">
+                <button onclick="nextSlide('slide2')">Open gift 🎁</button>
+            </div>
+        </div>
+
+        <div id="slide2" class="slide">
+            <h1>Do you miss me?</h1>
+            <div class="btn-container">
+                <button onclick="nextSlide('slide3')">Yes 🥺</button>
+                <button class="secondary" onclick="nextSlide('slide3')">yes</button>
+            </div>
+        </div>
+
+        <div id="slide3" class="slide">
+            <h1>So you admit that you do?</h1>
+            <div class="btn-container">
+                <button onclick="nextSlide('slide4')">Yes 🙈</button>
+                <button class="secondary" onclick="nextSlide('slide4')">yes but im a loser</button>
+            </div>
+        </div>
+
+        <div id="slide4" class="slide">
+            <h1>Do you admit im more awesome and totally a better skier? ⛷️</h1>
+            <div class="btn-container">
+                <button onclick="nextSlide('slide5')">Yes im a chud</button>
+                <button class="secondary" onclick="nextSlide('slide5')">no but im still a chud</button>
+            </div>
+        </div>
+
+        <div id="slide5" class="slide">
+            <h1>When I’m back do you wanna go rock climbing and get sushi after? 🧗‍♂️🍣</h1>
+            <div class="btn-container">
+                <button onclick="nextSlide('slide6')">Yes</button>
+                <button class="secondary" onclick="nextSlide('slide6')">yes but sushi with soju</button>
+            </div>
+        </div>
+
+        <div id="slide6" class="slide">
+            <h1>Will u be my valentine?</h1>
+            <p style="font-style: italic;">“Nonsexually”</p>
+            <div class="btn-container">
+                <button onclick="nextSlide('slide7')">Yes 💘</button>
+                <button class="secondary" onclick="nextSlide('slide7')">yes</button>
+            </div>
+        </div>
+
+        <div id="slide7" class="slide">
+            <h1>See you soon! ✈️</h1>
+            <p>Although i cant always be there because of the distance, I still feel the time we do spend together makes up for it.</p>
+            <p>Was definitely too geeked last time 😭 but will get u back next time. Nonsexually.</p>
+            <p>Anyways go have fun ✌️</p>
+        </div>
+
+    </div>
+
+    <script>
+        function nextSlide(id) {
+            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

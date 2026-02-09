@@ -87,10 +87,16 @@
             width: 100%;
             max-height: 350px;
             object-fit: cover;
+            /* Default to top for most photos */
             object-position: top; 
             border-radius: 15px;
             margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* FIX: Special rule to center the photo on slide 2 */
+        #slide2-photo {
+            object-position: center;
         }
 
         .intro-photo {
@@ -194,10 +200,10 @@
 
         <div id="slide2" class="slide">
             <h1>Do you miss me?</h1>
-            <img src="slide2.jpg" class="slide-photo" alt="Miss me" onerror="this.style.display='none'">
+            <img src="slide2.jpg" id="slide2-photo" class="slide-photo" alt="Miss me" onerror="this.style.display='none'">
             <div class="btn-container">
-                <button onclick="nextSlide('slide3')">Yes 🥺</button>
-                <button class="secondary" onclick="nextSlide('slide3')">yes</button>
+                <button onclick="nextSlide('slide3')">Yes </button>
+                <button class="secondary" onclick="nextSlide('slide3')">yes but im shy and dont say stuff</button>
             </div>
         </div>
 

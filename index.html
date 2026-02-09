@@ -20,8 +20,6 @@
         }
 
         /* --- BACKGROUND ANIMATIONS --- */
-        
-        /* Floating Hearts */
         .bg-heart {
             position: absolute;
             color: rgba(255, 182, 193, 0.6);
@@ -30,7 +28,6 @@
             z-index: 0;
         }
 
-        /* Falling Snowflakes */
         .snowflake {
             position: absolute;
             top: -10%;
@@ -88,8 +85,9 @@
         /* --- PHOTO STYLES --- */
         .slide-photo {
             width: 100%;
-            max-height: 350px; /* Tall enough for vertical photos */
+            max-height: 350px;
             object-fit: cover;
+            object-position: top; 
             border-radius: 15px;
             margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -118,13 +116,16 @@
             background-color: #e64980;
             color: white;
             border: none;
-            padding: 12px 20px;
+            padding: 15px 20px;
             border-radius: 50px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s;
             width: 100%;
+            white-space: normal;
+            height: auto;
+            line-height: 1.2;
         }
 
         button:hover {
@@ -239,7 +240,7 @@
 
         <div id="slide7" class="slide">
             <img src="slide7.jpg" class="slide-photo" alt="Outro" onerror="this.style.display='none'">
-            <h1>See you soon! ✈️</h1>
+            <h1>❤️</h1>
             <p>Although i cant always be there because of the distance, I still feel the time we do spend together makes up for it.</p>
             <p>Was definitely too geeked last time 😭 but will get u back next time. Nonsexually.</p>
             <p>Anyways go have fun ✌️</p>
